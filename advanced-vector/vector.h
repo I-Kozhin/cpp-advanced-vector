@@ -295,7 +295,7 @@ class Vector {
          */
         iterator Erase(const_iterator pos) {
 
-            assert(pos >= begin() && pos <= end());
+            assert(pos >= begin() && pos < end());
             size_t indx = pos - begin();
             std::move(begin() + indx + 1, end(), begin() + indx);
             std::destroy_at(end() - 1);
